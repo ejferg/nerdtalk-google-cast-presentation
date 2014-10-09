@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>NerdTalk | Google Cast Presentation</title>
+
+		<link rel="stylesheet" href="./lib/reveal.js/css/reveal.min.css">
+
+	</head>
+
+	<body>
+
+  <!--Libraries-->
+  <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+  <script src="../lib/jquery/dist/jquery.min.js"></script>
+  <script src="../lib/underscore/underscore-min.js"></script>
+  <script src="../lib/reveal.js/js/reveal.min.js"></script>
+
+  <!--Application-->
+  <script src="../js/common.js"></script>
+  <script src="../js/cast.sender.js"></script>
+
+  <!--View-->
+  <script>
+
+    (function(app) {
+
+      app.CastSenderView = (function() {
+
+        // View properties
+        var castButton;
+
+        // Initialize
+        var init = function() {
+
+          castButton = $('#cast-button');
+
+          addEventListeners();
+        };
+
+        // Event Listeners/Handlers
+        var onCastButtonClick = function(e) {
+
+          app.CastSender.requestSession();
+        };
+
+        var addEventListeners = function() {
+
+          castButton.on('click', _.bind(onCastButtonClick, this));
+        };
+
+        // Initialize on ready
+        $(document).ready(_.bind(init, this));
+
+      })();
+
+    })(window.nt);
+
+  </script>
+
+  <button id="cast-button">Cast Button</button>
+
+	</body>
+
+</html>
