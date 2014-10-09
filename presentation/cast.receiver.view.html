@@ -6,7 +6,7 @@
 
 		<title>reveal.js - Barebones</title>
 
-		<link rel="stylesheet" href="/lib/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="./lib/reveal.js/css/reveal.min.css">
 
 	</head>
 
@@ -30,9 +30,15 @@
 
 		</div>
 
+    <!--Libraries-->
+    <script src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
 		<script src="/lib/reveal.js/js/reveal.min.js"></script>
-		<script src="/cast.sender.js"></script>
 
+		<!--Application-->
+    <script src="./js/common.js"></script>
+    <script src="./js/cast.receiver.js"></script>
+
+    <!--View-->
 		<script>
 
 			Reveal.initialize();
