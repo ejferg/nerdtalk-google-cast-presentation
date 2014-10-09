@@ -29,7 +29,9 @@
 
       var config = new chrome.cast.ApiConfig(sessionRequest,sessionListener,receiverListener);
 
-      chrome.cast.initialize(config, onSenderInitializationComplate, onError);
+      chrome.cast.initialize(config,
+                             onSenderInitializationComplate,
+                             onError, chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED);
 
     };
 
@@ -58,7 +60,7 @@
 
       if(session) {
 
-        var media = this.session.media[0];
+        // var media = this.session.media[0];
 
         session.addUpdateListener(_.bind(onSessionChange, this));
       }
@@ -67,6 +69,7 @@
 
     var onSessionChange = function(e) {
 
+      logger.info(e);
     };
 
     var onReceiverReady = function(e) {
@@ -74,14 +77,9 @@
       logger.info(e);
     };
 
-    var onSesstionRequestComplete = function(e) {
-
-          session = e;
-    };
-
     var requestSession = function() {
 
-      var successListener = _.bind(onSesstionRequestComplete, this);
+      var successListener = _.bind(onSessionReady, this);
       var errorListener = _.bind(onError, this);
 
       chrome.cast.requestSession(successListener, errorListener);
