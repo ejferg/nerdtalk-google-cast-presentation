@@ -93,6 +93,14 @@
 
       if(session) {
 
+        if(app.isCastMessage(message)) {
+          message = message.serialize();
+
+        } else {
+
+          message = new app.CassMessage(nt.CastMessageTypes.EVENT, message);
+        }
+
         session.sendMessage(app.AppCast.NAMESPACE, message, successListener, errorListener);
 
       } else {

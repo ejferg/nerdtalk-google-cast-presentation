@@ -53,7 +53,8 @@
           castButton.on('click', _.bind(onCastButtonClick, this));
           sendMessageButton.on('click', _.bind(function() {
 
-            app.CastSender.sendMessage('message_from_sender');
+            var message = new app.CastMessage(app.CastMessageTypes.ACTION, {action: "next"});
+            app.CastSender.sendMessage(message);
 
           }, this));
         };

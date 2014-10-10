@@ -5,6 +5,7 @@
 
     var manager = null;
     var messageBus = null;
+    var messageHandler = null;
     var logger = app.logger;
 
     // Initialize
@@ -20,7 +21,7 @@
       start();
     };
 
-    // Start
+    // Utility Methods
 
     var start = function() {
       manager.start({statusText: "Application is starting"});
@@ -42,6 +43,13 @@
       logger.info(e);
 
       messageBus.send(e.senderId, e.data);
+
+      if(messageHandler) {
+
+        var castMessage = app.CastMessage.deserialize(e.data);
+
+        messageHandler(castMessage);
+      }
     };
 
     var addEventListeners = function() {
@@ -53,7 +61,20 @@
 
     };
 
+    // Getter/Setters
+    var setMessageHandler = function(value) {
+
+      messageHandler = value;
+
+    }
+
+    // Trigger initialization
     init();
+
+    return {
+
+      setMessageHandler:
+    }
 
   })();
 
