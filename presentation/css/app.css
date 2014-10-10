@@ -103,7 +103,7 @@ ul#action-buttons li {
 
 section.large-left-display div {
 
-  margin-left: -50px;
+  margin-left: -100px;
   text-align: left;
 }
 
@@ -133,7 +133,7 @@ section.question h1 {
 }
 
 section.image-display div.content {
-  margin-left: -200px;
+  margin-left: -100px;
   margin-top: 400px;
   text-align: left;
 }
