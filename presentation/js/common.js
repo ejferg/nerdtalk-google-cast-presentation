@@ -17,6 +17,11 @@
       ACTION: 2
     },
 
+    ActionTypes: {
+      NEXT: 0,
+      PREVIOUS: 1
+    },
+
     // Application Logger
     logger: {
 
@@ -54,7 +59,7 @@
 
   };
 
-  nt.deserialize = function(json) {
+  nt.CastMessage.deserialize = function(json) {
 
     var result = null;
 
@@ -69,7 +74,7 @@
     return result;
   };
 
-  nt.serialize = function(message) {
+  nt.CastMessage.serialize = function(message) {
 
     return JSON.stringify({type: message.type, data: message.data});
   };
@@ -80,13 +85,7 @@
     type: null,
 
     // Application based message data.
-    data: null,
-
-    // Serialize CastMessage to json for transport.
-    serialize: function() {
-
-      return nt.CastMessage.serialize(this);
-    }
+    data: null
 
   };
 

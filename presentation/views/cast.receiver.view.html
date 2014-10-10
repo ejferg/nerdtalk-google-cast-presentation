@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - Barebones</title>
+		<title>Google Cast Presentation</title>
 
 		<link rel="stylesheet" href="../lib/reveal.js/css/reveal.min.css">
 
@@ -32,6 +32,7 @@
 
     <!--Libraries-->
     <script src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/underscore/underscore-min.js"></script>
 		<script src="../lib/reveal.js/js/reveal.min.js"></script>
 
@@ -42,7 +43,63 @@
     <!--View-->
 		<script>
 
-			Reveal.initialize();
+    (function(app) {
+
+      app.CastReceiverView = (function(){
+
+        var logger = app.logger;
+
+        var init = function() {
+
+          Reveal.initialize();
+
+          addEventListeners();
+
+        };
+
+        var onMessage = function(message) {
+
+          if(message.type == app.CastMessageTypes.ACTION) {
+
+            var data = message.data;
+
+            triggerAction(data.action, data.actionData);
+
+          } else {
+
+            logger.info(message);
+          }
+
+        };
+
+        var triggerAction = function(action, info) {
+
+          logger.info('triggerAction: ' + action);
+
+          switch(action) {
+
+            case app.ActionTypes.NEXT:
+              Reveal.next();
+              break;
+            case app.ActionTypes.PREVIOUS:
+              Reveal.previous();
+              break;
+          }
+
+        };
+
+        var addEventListeners = function() {
+
+          app.CastReceiver.setMessageHandler(_.bind(onMessage, this));
+        };
+
+        // Initialize on ready
+        $(document).ready(_.bind(init, this));
+
+      })();
+
+    })(window.nt);
+
 
 		</script>
 

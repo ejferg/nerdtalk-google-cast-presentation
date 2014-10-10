@@ -53,7 +53,9 @@
           castButton.on('click', _.bind(onCastButtonClick, this));
           sendMessageButton.on('click', _.bind(function() {
 
-            var message = new app.CastMessage(app.CastMessageTypes.ACTION, {action: "next"});
+            var message = new app.CastMessage(app.CastMessageTypes.ACTION,
+                                              {action: app.ActionTypes.NEXT});
+
             app.CastSender.sendMessage(message);
 
           }, this));
@@ -69,7 +71,7 @@
   </script>
 
   <button id="cast-button">Cast Button</button>
-  <button id="send-message-button">Send Message</button>
+  <button id="send-message-button">Next Slide</button>
 
 	</body>
 

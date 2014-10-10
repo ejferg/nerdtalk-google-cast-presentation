@@ -66,14 +66,14 @@
 
       messageHandler = value;
 
-    }
+    };
 
     // Trigger initialization
     init();
 
     return {
 
-      setMessageHandler:
+      setMessageHandler:setMessageHandler
     }
 
   })();
