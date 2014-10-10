@@ -7,23 +7,131 @@
 		<title>Google Cast Presentation</title>
 
 		<link rel="stylesheet" href="../lib/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" type="text/css"
+          href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,200italic"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic"/>
+		<link rel="stylesheet" href="../css/app.css">
 
 	</head>
 
-	<body style="background-color: #ffffff">
+	<body>
+
+    <div class="app-background"></div>
 
 		<div class="reveal">
 
 			<div class="slides">
 
-				<section>
-					<h2>Barebones Presentation</h2>
-					<p>This example contains the bare minimum includes and markup required to run a reveal.js presentation.</p>
+				<section class="large-left-display intro">
+				  <div>
+				    <h1>Google Cast</h1>
+				    <h2>adidac</h2>
+				    <h3>multi-screen experiences</h3>
+				    <p>just a little nerdtalk<p>
+				  </div>
 				</section>
 
-				<section>
-					<h2>No Theme</h2>
-					<p>There's no theme included, so it will fall back on browser defaults.</p>
+				<section class="default-display question">
+					<h1>?</h1>
+				</section>
+
+				<section class="default-display devices">
+					<h1>Get to the hardware already.</h1>
+				</section>
+
+				<section data-background="../img/chromecast.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>Chromecast</h1>
+  				  </div>
+
+  				  <div class="tag bottom-tag">
+  				    <h1>hdmi <b>dongle</b></h1>
+  				  </div>
+
+				  </div>
+				</section>
+
+				<section data-background="../img/firetv.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>Amazon FireTV</h1>
+  				  </div>
+
+  				  <div class="tag bottom-tag">
+  				    <h1>set-top box</h1>
+  				  </div>
+
+				  </div>
+
+				</section>
+
+				<section data-background="../img/androidtv.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>ADT-1</h1>
+  				  </div>
+
+  				  <div class="tag bottom-tag">
+  				    <h1>set-top box</h1>
+  				  </div>
+
+				  </div>
+
+				</section>
+
+        <section class="large-left-display popular">
+				  <div>
+				    <h1>Popularity</h1>
+				    <h2>cool factor</h2>
+				    <h3><u>drake</u> or <u>trinidad james</u></h3>
+				    <p>is it a one hit wonder<p>
+				  </div>
+				</section>
+
+				<section class="default-display popular">
+					<h1>"We’ve sold millions of Chromecast adapters"</h1>
+				</section>
+
+				<section data-background="../img/whitney-bobby.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>Bobby & Whitney</h1>
+  				  </div>
+
+				  </div>
+
+				</section>
+
+				<section data-background="../img/rihanna-chris.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>Chris & Rihanna</h1>
+  				  </div>
+
+				  </div>
+
+				</section>
+
+				<section data-background="../img/fatkid.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>Fat Kid & Cake</h1>
+  				  </div>
+
+				  </div>
+
+				</section>
+
+				<section data-background="../img/dirty-dancing-lift.jpg" class="image-display devices">
+				  <div class="content">
+				    <div class="tag top-tag">
+  				    <h1>Dirty Dancing</h1>
+  				  </div>
+
+				  </div>
+
+				  <audio data-autoplay src="../audio/dirty-dancing.mp3"></audio>
 				</section>
 
 			</div>
@@ -37,7 +145,7 @@
 		<script src="../lib/reveal.js/js/reveal.min.js"></script>
 
 		<!--Application-->
-    <script src="../js/common.js"></script>
+    <script src="../js/cast.app.js"></script>
     <script src="../js/cast.receiver.js"></script>
 
     <!--View-->
@@ -51,7 +159,14 @@
 
         var init = function() {
 
-          Reveal.initialize();
+          Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              overview: false,
+              loop: true,
+              transition: 'linear'
+          });
 
           addEventListeners();
 

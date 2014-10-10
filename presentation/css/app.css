@@ -1,0 +1,104 @@
+/* COLORS
+   pink: #ff0099;
+   mid-grey: #1f1f1f rgba(31, 31, 31, 1.0);
+   dark-grey: #131313 rgba(19, 19, 19, 1.0);
+*/
+
+body {
+
+  color: #fff;
+  font-variant: normal;
+  font-style: normal;
+  font-weight: 200;
+  font-smooth: always;
+  font-family: 'Source Sans Pro', Sans-Serif, serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: #000;
+
+}
+
+
+.nt-pink {
+  color: #ff0099 !important;
+}
+
+.nt-mid-gray {
+  color: #1f1f1f !important;
+}
+
+.app-background {
+
+    background: url("../img/background-blur.png") no-repeat center center;
+    -webkit-background-size: cover;
+    pointer-events:none;
+    width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  opacity: 0.5;
+}
+
+.reveal h1{text-shadow:none; text-transform: none;}
+.reveal h2{text-shadow:none; text-transform: none;}
+
+section.large-left-display div {
+
+  margin-left: -200px;
+  text-align: left;
+}
+
+section.large-left-display h1 {
+  font-size: 84px !important;
+  font-weight: 200 !important;
+}
+
+section.large-left-display h2 {
+  font-size: 80px !important;
+  font-weight: 200 !important;
+}
+
+section.large-left-display h3 {
+  font-size: 80px !important;
+  font-weight: 200 !important;
+  color: #ff0099;
+}
+
+section.large-left-display p {
+  font-size: 30px;
+}
+
+section.question h1 {
+  font-size: 600px !important;
+  color: #ff0099 !important;
+}
+
+section.image-display div.content {
+  margin-left: -200px;
+  margin-top: 400px;
+  text-align: left;
+}
+
+section .tag {
+  width: 200px;
+  min-width: 200px;
+  padding: 15px;
+}
+
+section .top-tag {
+  width: 600px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+section .bottom-tag {
+
+  margin-top: 5px;
+  width: 400px;
+  color: #ff0099 !important;
+  font-size: 10px;
+  background-color: rgba(255, 255, 255, 0.8);;
+}
+
+.reveal .progress span {
+	background-color:#ff0099;
+}
