@@ -66,15 +66,6 @@ body {
   background: url("../img/nertalk_white_clear.png") no-repeat;
 }
 
-/*#action-buttons {*/
-
-/*    color: #fff;*/
-/*    position: absolute;*/
-/*	  top: 0;*/
-/*	  left: 0;*/
-/*	  z-index: 1;*/
-/*}*/
-
 ul#action-buttons {
 
 	min-width: 900px;
@@ -98,7 +89,7 @@ ul#action-buttons li {
 }
 
 .action-button {
-  color: #fff !important;
+  color: #ff0099 !important;
   width: 200px;
   height: 60px;
   display: block;
@@ -112,7 +103,7 @@ ul#action-buttons li {
 
 section.large-left-display div {
 
-  margin-left: -100px;
+  margin-left: -50px;
   text-align: left;
 }
 
