@@ -39,12 +39,80 @@ body {
 	  opacity: 0.5;
 }
 
+.sender-background {
+
+    background: url("../img/sender-bg.png") no-repeat center center;
+    -webkit-background-size: cover;
+    pointer-events:none;
+    width: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 0;
+}
+
+.app-header {
+  position: absolute;
+  width: 100%;
+  min-height: 60px;
+  left: 200;
+  top: 40;
+}
+
+.nerd-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: url("../img/nertalk_white_clear.png") no-repeat;
+}
+
+/*#action-buttons {*/
+
+/*    color: #fff;*/
+/*    position: absolute;*/
+/*	  top: 0;*/
+/*	  left: 0;*/
+/*	  z-index: 1;*/
+/*}*/
+
+ul#action-buttons {
+
+	min-width: 900px;
+	list-style: none;
+	padding-top: 20px;
+}
+
+ul#action-buttons li {
+		display: inline;
+}
+
+.button-container {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+
+	color: #fff;
+  position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.action-button {
+  color: #fff !important;
+  width: 200px;
+  height: 60px;
+  display: block;
+  text-align: left;
+  /*background-color: #ff0099;*/
+  margin-bottom: 10px;
+}
+
 .reveal h1{text-shadow:none; text-transform: none;}
 .reveal h2{text-shadow:none; text-transform: none;}
 
 section.large-left-display div {
 
-  margin-left: -200px;
+  margin-left: -100px;
   text-align: left;
 }
 

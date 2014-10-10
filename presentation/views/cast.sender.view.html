@@ -6,7 +6,7 @@
 
 		<title>NerdTalk | Google Cast Presentation</title>
 
-		<link rel="stylesheet" href="./lib/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../css/app.css">
 
 	</head>
 
@@ -82,9 +82,15 @@
 
   </script>
 
-  <button id="cast-button">Cast Button</button>
-  <button id="next-button">Next Slide</button>
-  <button id="prev-button">Prev Slide</button>
+
+  <div class="sender-background"></div>
+  <div class="button-container">
+      <ul id="action-buttons">
+      <li><a href="#" id="cast-button" class="action-button">CAST</a></li>
+      <li><a href="#" id="prev-button" class="action-button">NEXT SLIDE</a></li>
+      <li><a href="#" id="next-button" class="action-button">PREVIOUS SLIDE</a></li>
+    </ul>
+  </div>
 
 	</body>
 
