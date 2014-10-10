@@ -31,13 +31,15 @@
 
         // View properties
         var castButton;
-        var sendMessageButton;
+        var nextButton;
+        var prevButton;
 
         // Initialize
         var init = function() {
 
           castButton = $('#cast-button');
-          sendMessageButton = $('#send-message-button');
+          nextButton = $('#next-button');
+          prevButton = $('#prev-button');
 
           addEventListeners();
         };
@@ -51,7 +53,7 @@
         var addEventListeners = function() {
 
           castButton.on('click', _.bind(onCastButtonClick, this));
-          sendMessageButton.on('click', _.bind(function() {
+          nextButton.on('click', _.bind(function() {
 
             var message = new app.CastMessage(app.CastMessageTypes.ACTION,
                                               {action: app.ActionTypes.NEXT});
@@ -59,6 +61,16 @@
             app.CastSender.sendMessage(message);
 
           }, this));
+
+          prevButton.on('click', _.bind(function() {
+
+            var message = new app.CastMessage(app.CastMessageTypes.ACTION,
+                                              {action: app.ActionTypes.PREVIOUS});
+
+            app.CastSender.sendMessage(message);
+
+          }, this));
+
         };
 
         // Initialize on ready
@@ -71,7 +83,8 @@
   </script>
 
   <button id="cast-button">Cast Button</button>
-  <button id="send-message-button">Next Slide</button>
+  <button id="next-button">Next Slide</button>
+  <button id="prev-button">Prev Slide</button>
 
 	</body>
 
